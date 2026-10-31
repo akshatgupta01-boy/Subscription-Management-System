@@ -1,45 +1,4 @@
-# Brightloop — Subscription Management Website (Rebuild)
 
-A rebuild of https://manashpandey.lovable.app made with **React + Vite**.
-
-## 1. What the original site is (analysis)
-
-**Brightloop** is a "subscription operating system" — a SaaS for businesses that sell recurring plans.
-
-| Part | What it does |
-|---|---|
-| Landing page | Hero ("Revenue that loops itself"), Today vs With Brightloop, 9 features, lifecycle, roles, pricing, FAQ, final call-to-action |
-| Auth page (`/auth?mode=login` / `signup`) | Sign up / log in. The **first account becomes admin** |
-| App (behind login) | Products & variants, plans (daily/weekly/monthly/yearly), subscriptions, invoices with tax & discounts, payments, MRR/ARR reports |
-| Roles | Admin (everything), Staff (customers, quotes, invoices, payments), Customer (own portal) |
-| Lifecycle | Draft → Quotation → Confirmed → Active → Closed (plus pause / resume / cancel / renew) |
-| Design | Dark navy background, teal-green gradient accent, gold numbers, grid pattern, rounded cards, Sora + Manrope fonts |
-
-The original uses a real database. This rebuild saves data **in the browser (localStorage)** so it runs with zero setup.
-Pricing amounts and FAQ answers were hidden on the original, so sample values are used in `src/data.js`.
-
-## 2. Folder structure
-
-```
-brightloop/
-├── index.html            ← page shell + fonts
-├── package.json          ← dependencies & scripts
-├── vite.config.js        ← Vite config
-└── src/
-    ├── main.jsx          ← app entry + routes (/, /auth, /dashboard)
-    ├── styles.css        ← all colors, layout, design
-    ├── data.js           ← all text: features, plans, FAQ...
-    ├── store.js          ← login/signup + saving data in the browser
-    ├── assets/hero.jpg   ← hero image
-    └── pages/
-        ├── Landing.jsx   ← home page
-        ├── Auth.jsx      ← login / signup
-        ├── Dashboard.jsx ← subscriptions, MRR, ARR, collected, outstanding
-        ├── Products.jsx  ← products with sales/cost price and tax %
-        ├── Invoices.jsx  ← "Run billing" creates invoices (tax added, duplicates blocked)
-        └── Payments.jsx  ← record cash/bank/card payments against invoices
-    └── components/Layout.jsx ← top bar with page tabs + login check
-```
 
 ## 3. Step-by-step in VS Code
 
