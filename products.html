@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Brightloop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Brightloop</h2>
+
+        <nav>
+          <a href="index.html">Dashboard</a>
+          <a href="customers.html">Customers</a>
+          <a href="products.html" class="active">Products</a>
+          <a href="plans.html">Plans</a>
+          <a href="subscriptions.html">Subscriptions</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="payments.html">Payments</a>
+          <a href="discounts.html">Discounts</a>
+          <a href="reports.html">Reports</a>
+        </nav>
+
+        <button class="logout">Logout</button>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          <div>
+            <h1>Products</h1>
+            <p>Manage your subscription products</p>
+          </div>
+          <div class="profile">Admin</div>
+        </header>
+
+        <section class="table-section">
+          <div class="customer-header">
+            <h2>All Products</h2>
+            <button id="addProductBtn">+ Add Product</button>
+          </div>
+
+          <input
+            type="text"
+            id="productSearch"
+            placeholder="Search products..."
+          />
+
+          <div id="productForm" class="customer-form">
+            <h3>Add New Product</h3>
+
+            <input type="text" id="productName" placeholder="Product Name" />
+
+            <label for="productType">Product Type</label>
+            <select id="productType">
+              <option value="">Select Product Type</option>
+              <option value="Software">Software</option>
+              <option value="Add-on">Add-on</option>
+              <option value="Variant Product">Variant Product</option>
+            </select>
+
+            <input
+              type="number"
+              id="salesPrice"
+              placeholder="Sales Price (₹)"
+              min="0"
+              step="0.01"
+            />
+
+            <input
+              type="number"
+              id="costPrice"
+              placeholder="Cost Price (₹)"
+              min="0"
+              step="0.01"
+            />
+
+            <h4>Product Variant (Optional)</h4>
+
+            <input
+              type="text"
+              id="variantName"
+              placeholder="Variant Name (e.g. Odoo Brand)"
+            />
+
+            <input
+              type="number"
+              id="variantPrice"
+              placeholder="Additional Price (e.g. 560)"
+              min="0"
+              step="0.01"
+            />
+
+            <textarea
+              id="productNotes"
+              placeholder="Product Notes / Description"
+            ></textarea>
+
+            <button id="saveProductBtn">Save Product</button>
+            <button id="cancelProductBtn">Cancel</button>
+          </div>
+
+          <p id="totalProducts">Total Products: 0</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Type</th>
+                <th>Sales Price</th>
+                <th>Cost Price</th>
+                <th>Variant</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="productList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="products.js"></script>
+  </body>
+</html>

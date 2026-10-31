@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Brightloop</h2>
+
+        <nav>
+          <a href="#" class="active">Dashboard</a>
+          <a href="#">Customers</a>
+          <a href="products.html">Products</a>
+          <a href="plans.html">Plans</a>
+          <a href="subscriptions.html">Subscriptions</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="payments.html">Payments</a>
+          <a href="discounts.html">Discounts</a>
+          <a href="reports.html">Reports</a>
+        </nav>
+
+        <button class="logout">Logout</button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <div>
+            <h1>Dashboard</h1>
+            <p>Welcome to Brightloop Software</p>
+          </div>
+          <div class="profile">Admin</div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+          <div class="card">
+            <h3>Total Customers</h3>
+            <h2>120</h2>
+          </div>
+
+          <div class="card">
+            <h3>Active Subscriptions</h3>
+            <h2>85</h2>
+          </div>
+
+          <div class="card">
+            <h3>Total Revenue</h3>
+            <h2>₹1,25,000</h2>
+          </div>
+
+          <div class="card">
+            <h3>Pending Invoices</h3>
+            <h2>12</h2>
+          </div>
+        </section>
+
+        <!-- Recent Subscriptions -->
+        <section class="table-section">
+          <h2>Recent Subscriptions</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Plan</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rahul Sharma</td>
+                <td>Monthly</td>
+                <td>₹999</td>
+                <td>Active</td>
+              </tr>
+
+              <tr>
+                <td>Priya Singh</td>
+                <td>Yearly</td>
+                <td>₹9,999</td>
+                <td>Active</td>
+              </tr>
+
+              <tr>
+                <td>Amit Verma</td>
+                <td>Monthly</td>
+                <td>₹999</td>
+                <td>Pending</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

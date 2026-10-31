@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customers - Brightloop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Brightloop</h2>
+
+        <nav>
+          <a href="index.html">Dashboard</a>
+          <a href="customers.html" class="active">Customers</a>
+          <a href="products.html">Products</a>
+          <a href="plans.html">Plans</a>
+          <a href="subscriptions.html">Subscriptions</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="payments.html">Payments</a>
+          <a href="discounts.html">Discounts</a>
+          <a href="reports.html">Reports</a>
+        </nav>
+
+        <button class="logout">Logout</button>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          <div>
+            <h1>Customers</h1>
+            <p>Manage your customers</p>
+          </div>
+          <div class="profile">Admin</div>
+        </header>
+
+        <section class="table-section">
+          <div class="customer-header">
+            <h2>All Customers</h2>
+            <button id="addBtn">+ Add Customer</button>
+          </div>
+
+          <input type="text" id="search" placeholder="Search customers..." />
+
+          <div id="customerForm" class="customer-form">
+            <h3>Add New Customer</h3>
+
+            <input type="text" id="name" placeholder="Customer Name" />
+
+            <input type="email" id="email" placeholder="Email Address" />
+
+            <input type="tel" id="phone" placeholder="Phone Number" />
+
+            <input type="text" id="company" placeholder="Company Name" />
+
+            <button id="saveBtn">Save Customer</button>
+            <button id="cancelBtn">Cancel</button>
+          </div>
+
+          <p id="totalCustomers">Total Customers: 0</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="customerList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="customers.js"></script>
+  </body>
+</html>

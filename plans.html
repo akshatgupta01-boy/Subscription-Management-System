@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plans - Brightloop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Brightloop</h2>
+
+        <nav>
+          <a href="index.html">Dashboard</a>
+          <a href="customers.html">Customers</a>
+          <a href="products.html">Products</a>
+          <a href="plans.html" class="active">Plans</a>
+          <a href="subscriptions.html">Subscriptions</a>
+          <a href="invoices.html">Invoices</a>
+          <a href="payments.html">Payments</a>
+          <a href="discounts.html">Discounts</a>
+          <a href="reports.html">Reports</a>
+        </nav>
+
+        <button class="logout">Logout</button>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          <div>
+            <h1>Plans</h1>
+            <p>Create and manage subscription plans</p>
+          </div>
+          <div class="profile">Admin</div>
+        </header>
+
+        <section class="table-section">
+          <div class="customer-header">
+            <h2>All Plans</h2>
+            <button id="addPlanBtn">+ Add Plan</button>
+          </div>
+
+          <input type="text" id="planSearch" placeholder="Search plans..." />
+
+          <div id="planForm" class="customer-form">
+            <h3>Create New Plan</h3>
+
+            <label for="planName">Plan Name *</label>
+            <input
+              type="text"
+              id="planName"
+              placeholder="e.g. Business Monthly"
+            />
+
+            <label for="planProduct">Select Product *</label>
+            <select id="planProduct">
+              <option value="">Select Product</option>
+            </select>
+
+            <label for="planPrice">Plan Price (₹) *</label>
+            <input
+              type="number"
+              id="planPrice"
+              min="0"
+              step="0.01"
+              placeholder="Enter price"
+            />
+
+            <label for="billingCycle">Billing Cycle *</label>
+            <select id="billingCycle">
+              <option value="">Select Billing Cycle</option>
+              <option value="Daily">Daily</option>
+              <option value="Weekly">Weekly</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Yearly">Yearly</option>
+            </select>
+
+            <label for="minQuantity">Minimum Quantity *</label>
+            <input type="number" id="minQuantity" min="1" step="1" value="1" />
+
+            <label for="startDate">Available From *</label>
+            <input type="date" id="startDate" />
+
+            <label for="endDate">Available Until *</label>
+            <input type="date" id="endDate" />
+
+            <h4>Plan Rules</h4>
+
+            <label class="rule-option">
+              <input type="checkbox" id="autoClose" />
+              Automatically close plan after its end date
+            </label>
+
+            <label class="rule-option">
+              <input type="checkbox" id="allowEarlyClose" checked />
+              Allow early closure
+            </label>
+
+            <label class="rule-option">
+              <input type="checkbox" id="allowPause" checked />
+              Allow subscription pause
+            </label>
+
+            <label class="rule-option">
+              <input type="checkbox" id="allowRenew" checked />
+              Allow subscription renewal
+            </label>
+
+            <div>
+              <button id="savePlanBtn">Save Plan</button>
+              <button id="cancelPlanBtn">Cancel</button>
+            </div>
+          </div>
+
+          <p id="totalPlans">Total Plans: 0</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Plan Name</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Billing</th>
+                <th>Min Qty</th>
+                <th>Availability</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="planList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="plans.js"></script>
+  </body>
+</html>
