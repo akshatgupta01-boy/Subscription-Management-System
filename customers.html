@@ -1,82 +1,231 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customers - Brightloop</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <aside class="sidebar">
-        <h2>Brightloop</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | Brightloop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="effects.js"></script>
 
-        <nav>
-          <a href="index.html">Dashboard</a>
-          <a href="customers.html" class="active">Customers</a>
-          <a href="products.html">Products</a>
-          <a href="plans.html">Plans</a>
-          <a href="subscriptions.html">Subscriptions</a>
-          <a href="invoices.html">Invoices</a>
-          <a href="payments.html">Payments</a>
-          <a href="discounts.html">Discounts</a>
-          <a href="reports.html">Reports</a>
-        </nav>
+<body class="customers-page">
 
-        <button class="logout">Logout</button>
-      </aside>
+<div class="container">
 
-      <main class="main-content">
-        <header>
-          <div>
-            <h1>Customers</h1>
-            <p>Manage your customers</p>
-          </div>
-          <div class="profile">Admin</div>
+    <!-- Sidebar -->
+    <
+<aside class="sidebar">
+
+  <!-- Brand -->
+  <div class="sidebar-brand">
+    <div class="brand-icon">B</div>
+    <h2>Brightloop<span>.</span></h2>
+  </div>
+
+  <!-- Navigation -->
+  <div class="sidebar-menu">
+    <p class="nav-heading">WORKSPACE</p>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-link">
+        <span class="nav-icon">▦</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="customers.html" class="nav-link active">
+        <span class="nav-icon">♙</span>
+        <span>Customers</span>
+      </a>
+
+      <a href="products.html" class="nav-link">
+        <span class="nav-icon">▣</span>
+        <span>Products</span>
+      </a>
+
+      <a href="plans.html" class="nav-link">
+        <span class="nav-icon">▤</span>
+        <span>Plans</span>
+      </a>
+
+      <a href="subscriptions.html" class="nav-link">
+        <span class="nav-icon">⟳</span>
+        <span>Subscriptions</span>
+      </a>
+
+      <a href="invoices.html" class="nav-link">
+        <span class="nav-icon">▧</span>
+        <span>Invoices</span>
+      </a>
+
+      <a href="payments.html" class="nav-link">
+        <span class="nav-icon">₹</span>
+        <span>Payments</span>
+      </a>
+
+      <a href="discounts.html" class="nav-link">
+        <span class="nav-icon">％</span>
+        <span>Discounts</span>
+      </a>
+
+      <a href="reports.html" class="nav-link">
+        <span class="nav-icon">▥</span>
+        <span>Reports</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Logout -->
+  <div class="sidebar-bottom">
+    <button class="logout-btn" onclick="logout()">
+      <span>↪</span> Logout
+    </button>
+  </div>
+
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="page-heading">
+                <div class="breadcrumb">WORKSPACE / CUSTOMERS</div>
+                <h1>Customers</h1>
+                <p>Manage your customer relationships and information.</p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">A</div>
+                <div class="profile-info">
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+                <span class="profile-arrow">⌄</span>
+            </div>
         </header>
 
-        <section class="table-section">
-          <div class="customer-header">
-            <h2>All Customers</h2>
-            <button id="addBtn">+ Add Customer</button>
-          </div>
+        <!-- Customer Statistics -->
+        <section class="customer-stats">
+            <div class="customer-stat-card">
+                <div class="customer-stat-icon">♙</div>
+                <div>
+                    <span>Total Customers</span>
+                    <h2 id="customerStatTotal">0</h2>
+                </div>
+            </div>
 
-          <input type="text" id="search" placeholder="Search customers..." />
+            <div class="customer-stat-card">
+                <div class="customer-stat-icon company-icon">▣</div>
+                <div>
+                    <span>Customer Companies</span>
+                    <h2 id="customerStatCompanies">—</h2>
+                </div>
+            </div>
 
-          <div id="customerForm" class="customer-form">
-            <h3>Add New Customer</h3>
-
-            <input type="text" id="name" placeholder="Customer Name" />
-
-            <input type="email" id="email" placeholder="Email Address" />
-
-            <input type="tel" id="phone" placeholder="Phone Number" />
-
-            <input type="text" id="company" placeholder="Company Name" />
-
-            <button id="saveBtn">Save Customer</button>
-            <button id="cancelBtn">Cancel</button>
-          </div>
-
-          <p id="totalCustomers">Total Customers: 0</p>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Company</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            <tbody id="customerList"></tbody>
-          </table>
+            <div class="customer-stat-card">
+                <div class="customer-stat-icon email-icon">@</div>
+                <div>
+                    <span>Customer Directory</span>
+                    <h2>Contacts</h2>
+                </div>
+            </div>
         </section>
-      </main>
-    </div>
 
-    <script src="customers.js"></script>
-  </body>
+        <!-- Customer Management -->
+        <section class="customer-management">
+
+            <div class="customer-header">
+                <div>
+                    <span class="section-label">CUSTOMER MANAGEMENT</span>
+                    <h2>All Customers</h2>
+                    <p>View, search and manage your customers.</p>
+                </div>
+
+                <button id="addBtn" class="customer-add-btn">
+                    <span>＋</span> Add Customer
+                </button>
+            </div>
+
+            <div class="customer-toolbar">
+                <div class="customer-search">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search by name, email, phone or company..."
+                    >
+                </div>
+                <span class="customer-count" id="totalCustomers">
+                    Total Customers: 0
+                </span>
+            </div>
+
+            <!-- Add Customer Form -->
+            <div id="customerForm" class="customer-form">
+                <div class="customer-form-heading">
+                    <div>
+                        <span class="section-label">NEW RECORD</span>
+                        <h3>Add New Customer</h3>
+                        <p>Enter the customer's contact information below.</p>
+                    </div>
+                </div>
+
+                <div class="customer-form-grid">
+                    <div class="customer-field">
+                        <label for="name">Customer Name</label>
+                        <input type="text" id="name" placeholder="Enter full name">
+                    </div>
+
+                    <div class="customer-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com">
+                    </div>
+
+                    <div class="customer-field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter phone number">
+                    </div>
+
+                    <div class="customer-field">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" placeholder="Enter company name">
+                    </div>
+                </div>
+
+                <div class="customer-form-actions">
+                    <button id="cancelBtn" class="customer-cancel-btn">Cancel</button>
+                    <button id="saveBtn" class="customer-save-btn">Save Customer</button>
+                </div>
+            </div>
+
+            <!-- Customer Table -->
+            <div class="customer-table-wrapper">
+                <table class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>CUSTOMER</th>
+                            <th>EMAIL ADDRESS</th>
+                            <th>PHONE</th>
+                            <th>COMPANY</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customerList"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <span>© 2026 Brightloop. All rights reserved.</span>
+            <span>Subscription Management System</span>
+        </footer>
+
+    </main>
+</div>
+
+<script src="customers.js"></script>
+</body>
 </html>
